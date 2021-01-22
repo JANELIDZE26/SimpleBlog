@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Post } from '../../main-page/post.model';
+import { BehaviorSubject, combineLatest } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 
 @Injectable({
@@ -8,13 +9,12 @@ import { map, tap } from 'rxjs/operators';
 })
 export class ApiService {
   url = 'https://jsonplaceholder.typicode.com';
-  lastId = 12;
+  lastId = new BehaviorSubject<number>(12);
+  lastIdAction$ = this.lastId.asObservable();
+  getPosts$ = this.http.get<Post[]>(`${this.url}/posts`);
 
-  posts$ = this.http.get<Post[]>(`${this.url}/posts`).pipe(
-    tap(console.log),
-    map((posts: Post[]) =>
-      posts.filter((post: Post) => post.id <= this.lastId)
-    ),
+  posts$ = combineLatest([this.getPosts$, this.lastIdAction$]).pipe(
+    map(([posts, lastId]) => posts.filter((post: Post) => post.id <= lastId)),
     tap(console.log)
   );
 

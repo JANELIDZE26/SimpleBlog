@@ -1,26 +1,26 @@
-import {Component, OnInit} from '@angular/core';
-import {ApiService} from '../services/api/api.service';
-import {Observable} from 'rxjs';
-import {Post} from './post.model';
+import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../services/api/api.service';
+import { Observable } from 'rxjs';
+import { Post } from './post.model';
 
 @Component({
   selector: 'app-main-page',
   templateUrl: './main-page.component.html',
-  styleUrls: ['./main-page.component.css']
+  styleUrls: ['./main-page.component.css'],
 })
 export class MainPageComponent implements OnInit {
   posts$: Observable<Post[]> = this.api.posts$;
+  lastId: number;
 
-  constructor(private api: ApiService) {
-  }
-
+  constructor(private api: ApiService) {}
 
   ngOnInit(): void {
-
+    this.api.lastIdAction$.subscribe(
+      (previousId) => (this.lastId = previousId)
+    );
   }
 
   onLoadMore(): void {
-    this.api.lastId += 12;
-    this.posts$ = this.api.posts$;
+    this.api.lastId.next(this.lastId + 12);
   }
 }
