@@ -1,0 +1,41 @@
+.posts {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  width: 95%;
+  height: 100vh;
+}
+
+.btn {
+  background-color: #E8AA14;
+  margin: 10px auto;
+  display: block;
+  outline: none;
+  width: 10%;
+  height: 25px;
+  border: none;
+  border-radius: 300px;
+  cursor: pointer;
+  color: white;
+  transition: transform .2s;
+}
+
+.btn::after {
+  content: "";
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  border-radius: 300px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.4s;
+}
+
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
