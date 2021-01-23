@@ -1,0 +1,36 @@
+<div *ngIf="post" class="post">
+  <div class="title">
+    <h1>{{ post.title }}</h1>
+  </div>
+  <div class="image">
+    <img
+      alt="image"
+      class="img"
+      src="https://picsum.photos/id/{{ post.id }}/200/200"
+    />
+  </div>
+
+  <div class="content">
+    <p>{{ post.body }}</p>
+  </div>
+  <div class="post-author">
+    <p>Author:<span class="name"> {{ post.user.username }}</span></p>
+  </div>
+</div>
+<h2 class="comment-header">Comments</h2>
+<div *ngIf="post" class="comments">
+  <div *ngFor="let comment of post.comments" class="comment">
+    <div class="comment-author">
+      <p>{{ comment.name }}</p>
+    </div>
+    <div class="comment-content">
+      <p>{{ comment.body }}</p>
+    </div>
+  </div>
+  <div class="add-comment">
+    <button class="btn">Add Comment</button>
+  </div>
+</div>
+
+
+<app-spinner *ngIf="!post" class="spinner"></app-spinner>

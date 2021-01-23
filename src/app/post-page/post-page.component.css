@@ -1,0 +1,145 @@
+.post {
+  background-color: white;
+  width: 80%;
+  height:auto;
+  margin: 50px auto;
+  border-radius: 10px;
+  border: 2px solid #2d3142;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.title {
+  margin: 50px auto 20px auto;
+  width: 80%;
+  height: 20%;
+}
+
+.title h1 {
+  color: #433a3f;
+  font-style: italic;
+  font-weight: 600;
+}
+
+.img {
+  border-radius: 10px;
+  display: block;
+  margin: 10px 100px;
+}
+
+.image {
+  width: 30%;
+  height: 50%;
+}
+
+.post-author {
+  width: 20%;
+  margin-left: 105px;
+  margin-bottom: 10px;
+}
+.name {
+  font-weight: 500;
+  cursor:pointer;
+  color: #2F97C1;
+  transition: color .2s;
+}
+.name:hover {
+  color: #19728f;
+
+}
+
+.content {
+  width: 50%;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+.content p {
+  font-weight: 500;
+  background-color: #eceaea;
+  padding: 20px;
+  border-radius: 20px;
+  width: 650px;
+}
+
+.spinner {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/*/////////////////////////////////////////////////////////////////////////////////////////////*/
+.comments {
+  background-color: white;
+  width: 80%;
+  height: auto;
+  margin: 50px auto;
+  border-radius: 10px;
+  border: 2px solid #2d3142;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.comment {
+  font-size: 16px;
+  width:90%;
+  margin: 10px auto;
+}
+
+.comment-content p {
+  background-color: #cdcaca;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.comment-author p {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.comment-header {
+  color: white;
+  margin-left: 130px;
+}
+
+.add-comment {
+  width:30%;
+  margin: 10px 0 10px auto;
+}
+.btn {
+  background-color: #429EA6;
+  margin-left: 130px;
+  display: block;
+  outline: none;
+  width: 50%;
+  height: 25px;
+  border: none;
+  border-radius: 300px;
+  cursor: pointer;
+  color: white;
+  transition: all .2s;
+}
+
+.btn::after {
+  content: "";
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  border-radius: 300px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.4s;
+}
+
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  background-color: #32c6cf;
+}
+

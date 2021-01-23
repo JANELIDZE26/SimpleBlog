@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../services/api/api.service';
 import { Observable } from 'rxjs';
-import { Post } from './post.model';
+import { Post } from '../models/post.model';
 
 @Component({
   selector: 'app-main-page',
