@@ -12,11 +12,12 @@
   height: 270px;
   margin: 20px 25px;
   border-radius: 10px;
-  border: 2px solid #A63446;
+  border: 2px solid #2D3142;
+  background-color: white;
 }
 
 .btn {
-  background-color: #0496FF;
+  background-color: #429EA6;
   margin: 5px auto;
   display: block;
   outline: none;
@@ -46,6 +47,7 @@
 .btn:hover {
   transform: translateY(-3px);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  background-color: #38b9c4;
 }
 
 .title {
@@ -55,7 +57,7 @@
 }
 
 .title h5 {
-  color: #272727;
+  color: #433A3F;
   margin: 10px auto;
 }
 

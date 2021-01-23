@@ -7,7 +7,7 @@
 }
 
 .btn {
-  background-color: #E8AA14;
+  background-color: #FFF275;
   margin: 10px auto;
   display: block;
   outline: none;
@@ -16,7 +16,7 @@
   border: none;
   border-radius: 300px;
   cursor: pointer;
-  color: white;
+  color: #363636;
   transition: transform .2s;
 }
 
@@ -37,6 +37,7 @@
 .btn:hover {
   transform: translateY(-3px);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  background-color: #f8e957;
 }
 
 .finished-alert {
