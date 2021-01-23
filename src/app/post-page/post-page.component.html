@@ -14,7 +14,9 @@
     <p>{{ post.body }}</p>
   </div>
   <div class="post-author">
-    <p>Author:<span class="name"> {{ post.user.username }}</span></p>
+    <p>
+      Author:<span class="name"> {{ post.user.username }}</span>
+    </p>
   </div>
 </div>
 <h2 class="comment-header">Comments</h2>
@@ -28,9 +30,68 @@
     </div>
   </div>
   <div class="add-comment">
-    <button class="btn">Add Comment</button>
+    <button (click)="open(content)" class="btn">Add Comment</button>
   </div>
 </div>
 
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Add Comment</h4>
+    <button
+      (click)="modal.dismiss('Cross click')"
+      aria-label="Close"
+      class="close"
+      type="button"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form #modalForm="ngForm" (ngSubmit)="onAddComment(modalForm)">
+      <div>
+        <label for="name">Name</label>
+        <input
+          id="name"
+          name="name"
+          ngModel
+          placeholder="Name"
+          required
+          type="text"
+        />
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input
+          id="email"
+          name="email"
+          ngModel
+          placeholder="Email"
+          required
+          type="email"
+        />
+      </div>
+      <div>
+        <label for="comment">Text</label>
+        <textarea
+          id="comment"
+          name="body"
+          ngModel
+          placeholder="Add Comment Here"
+          required
+        ></textarea>
+      </div>
+      <div class="modal-footer">
+        <button
+          (click)="modal.close('Save click')"
+          class="btn btn-outline-dark"
+          type="submit"
+          [disabled]="!modalForm.valid"
+        >
+          Save
+        </button>
+      </div>
+    </form>
+  </div>
+</ng-template>
 
 <app-spinner *ngIf="!post" class="spinner"></app-spinner>

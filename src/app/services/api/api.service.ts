@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Post } from '../../models/post.model';
 import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
-import { map, mergeMap, tap } from 'rxjs/operators';
+import { map, mergeMap } from 'rxjs/operators';
 import { Comment, User } from '../../models/index.model';
 
 @Injectable({
@@ -23,7 +23,7 @@ export class ApiService {
   getPost(id): Observable<Post> {
     return this.http.get<Post>(`${this.url}/posts/${id}/`).pipe(
       mergeMap((post: Post) => this.attachComments(post)),
-      mergeMap((post: Post) => this.attachUser(post)),
+      mergeMap((post: Post) => this.attachUser(post))
     );
   }
 
@@ -37,5 +37,9 @@ export class ApiService {
     return this.http
       .get<User>(`${this.url}/users/${post.userId}`)
       .pipe(map((user: User) => ({ ...post, user })));
+  }
+
+  addComment(comment: Comment): Observable<any>{
+    return this.http.post(`${this.url}/comments`, comment);
   }
 }

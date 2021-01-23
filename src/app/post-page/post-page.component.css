@@ -1,7 +1,7 @@
 .post {
   background-color: white;
   width: 80%;
-  height:auto;
+  height: auto;
   margin: 50px auto;
   border-radius: 10px;
   border: 2px solid #2d3142;
@@ -38,12 +38,14 @@
   margin-left: 105px;
   margin-bottom: 10px;
 }
+
 .name {
   font-weight: 500;
-  cursor:pointer;
+  cursor: pointer;
   color: #2F97C1;
   transition: color .2s;
 }
+
 .name:hover {
   color: #19728f;
 
@@ -85,7 +87,7 @@
 
 .comment {
   font-size: 16px;
-  width:90%;
+  width: 90%;
   margin: 10px auto;
 }
 
@@ -106,13 +108,13 @@
 }
 
 .add-comment {
-  width:30%;
+  width: 30%;
   margin: 10px 0 10px auto;
 }
+
 .btn {
   background-color: #429EA6;
   margin-left: 130px;
-  display: block;
   outline: none;
   width: 50%;
   height: 25px;
@@ -121,25 +123,29 @@
   cursor: pointer;
   color: white;
   transition: all .2s;
+  padding: 0;
 }
-
-.btn::after {
-  content: "";
-  display: inline-block;
-  width: 100%;
-  height: 100%;
-  border-radius: 300px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  transition: all 0.4s;
-}
-
 
 .btn:hover {
   transform: translateY(-3px);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   background-color: #32c6cf;
+}
+
+/*/////////////////////////////////////////////////////*/
+
+label {
+  margin-right: 5px;
+}
+
+input, textarea {
+  outline: none;
+  cursor: text;
+
+}
+
+textarea {
+  width: 450px;
+  min-height: 300px;
 }
 

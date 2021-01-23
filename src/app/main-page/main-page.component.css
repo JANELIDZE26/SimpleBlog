@@ -18,6 +18,8 @@
   cursor: pointer;
   color: #363636;
   transition: all .2s;
+  padding: 0;
+
 }
 
 .btn::after {
