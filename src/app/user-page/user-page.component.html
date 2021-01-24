@@ -1,0 +1,40 @@
+<div *ngIf="user" class="back-section">
+  <button class="back btn" routerLink=""><-- Main Page</button>
+</div>
+<div *ngIf="user" class="user">
+  <div class="image">
+    <img
+      alt="image"
+      class="img"
+      src="https://picsum.photos/id/{{ user.id }}/200/200"
+    />
+  </div>
+  <div class="user-data">
+    <div class="data">
+      <p>UserName:{{ user.username }}</p>
+      <p>Name:{{ user.name }}</p>
+      <p>Email:{{ user.email }}</p>
+      <p>
+        Address: <span style="font-weight: bolder">{{ user.address.city }}</span
+        >, {{ user.address.street }}
+      </p>
+    </div>
+  </div>
+</div>
+<h3 class="posts-heading" *ngIf="user">User Posts</h3>
+
+<div *ngIf="user">
+  <div class="posts">
+    <app-post *ngFor="let post of user.posts" [post]="post"></app-post>
+  </div>
+  <div *ngIf="lastId < user.posts[user.posts.length - 1].id" class="button">
+    <button (click)="onLoadMore()" class="btn">Load More</button>
+  </div>
+  <div
+    class="finished-alert"
+    *ngIf="lastId >= user.posts[user.posts.length - 1].id"
+  >
+    <p>No more Posts</p>
+  </div>
+</div>
+<app-spinner class="spinner" *ngIf="!user"></app-spinner>

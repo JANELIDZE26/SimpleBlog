@@ -39,7 +39,20 @@ export class ApiService {
       .pipe(map((user: User) => ({ ...post, user })));
   }
 
-  addComment(comment: Comment): Observable<any>{
+  addComment(comment: Comment): Observable<any> {
     return this.http.post(`${this.url}/comments`, comment);
+  }
+
+  getUserProfile(userId: number, posts: Post[]): Observable<User> {
+    return this.http
+      .get<User>(`${this.url}/users/${userId}`)
+      .pipe(map((user: User) => ({ posts, ...user })));
+  }
+
+  getUserPageData(userId: number): Observable<any> {
+    return this.getPosts$.pipe(
+      map((posts: Post[]) => posts.filter((post) => post.userId === userId)),
+      mergeMap((posts: Post[]) => this.getUserProfile(userId, posts))
+    );
   }
 }

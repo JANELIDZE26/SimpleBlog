@@ -14,6 +14,7 @@ export class PostPageComponent implements OnInit {
   post: Post;
   closeResult = '';
   postId: number;
+  userId: number;
 
   constructor(
     private router: ActivatedRoute,
@@ -22,7 +23,10 @@ export class PostPageComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+
     this.postId = this.router.snapshot.params.id;
+    this.userId = this.router.snapshot.params.userId;
+
     this.api.getPost(this.postId).subscribe(
       (post) => (this.post = post),
       console.log,
@@ -57,7 +61,8 @@ export class PostPageComponent implements OnInit {
     this.api
       .addComment({ ...form.value, postId: this.postId })
       .subscribe(
-        newComment => this.post.comments = [...this.post.comments, newComment]
+        (newComment) =>
+          (this.post.comments = [...this.post.comments, newComment])
       );
   }
 }

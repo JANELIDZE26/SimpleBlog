@@ -1,10 +1,22 @@
+.back {
+  width: 130px;
+  height: 30px;
+  padding: 5px;
+}
+
+.back-section {
+  height: 40px;
+  margin: 5px;
+  position: absolute;
+}
+
 .post {
   background-color: white;
   width: 80%;
   height: auto;
   margin: 50px auto;
   border-radius: 10px;
-  border: 2px solid #2d3142;
+  border: 2px solid #f1dede;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -42,13 +54,12 @@
 .name {
   font-weight: 500;
   cursor: pointer;
-  color: #2F97C1;
-  transition: color .2s;
+  color: #2f97c1;
+  transition: color 0.2s;
 }
 
 .name:hover {
   color: #19728f;
-
 }
 
 .content {
@@ -79,7 +90,7 @@
   height: auto;
   margin: 50px auto;
   border-radius: 10px;
-  border: 2px solid #2d3142;
+  border: 2px solid #f1dede;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -113,7 +124,7 @@
 }
 
 .btn {
-  background-color: #429EA6;
+  background-color: #d16666;
   margin-left: 130px;
   outline: none;
   width: 50%;
@@ -122,14 +133,14 @@
   border-radius: 300px;
   cursor: pointer;
   color: white;
-  transition: all .2s;
+  transition: all 0.2s;
   padding: 0;
 }
 
 .btn:hover {
   transform: translateY(-3px);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  background-color: #32c6cf;
+  background-color: #a04343;
 }
 
 /*/////////////////////////////////////////////////////*/
@@ -138,14 +149,14 @@ label {
   margin-right: 5px;
 }
 
-input, textarea {
+input,
+textarea {
   outline: none;
   cursor: text;
-
 }
 
 textarea {
   width: 450px;
   min-height: 300px;
+  max-height: 300px;
 }
-

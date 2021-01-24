@@ -1,3 +1,6 @@
+<div *ngIf="post" class="back-section">
+  <button class="back btn" routerLink=""><-- Main Page</button>
+</div>
 <div *ngIf="post" class="post">
   <div class="title">
     <h1>{{ post.title }}</h1>
@@ -15,11 +18,13 @@
   </div>
   <div class="post-author">
     <p>
-      Author:<span class="name"> {{ post.user.username }}</span>
+      Author:<span class="name" routerLink="/{{ userId }}">
+        {{ post.user.username }}</span
+      >
     </p>
   </div>
 </div>
-<h2 class="comment-header">Comments</h2>
+<h2 *ngIf="post" class="comment-header">Comments</h2>
 <div *ngIf="post" class="comments">
   <div *ngFor="let comment of post.comments" class="comment">
     <div class="comment-author">
@@ -83,9 +88,9 @@
       <div class="modal-footer">
         <button
           (click)="modal.close('Save click')"
+          [disabled]="!modalForm.valid"
           class="btn btn-outline-dark"
           type="submit"
-          [disabled]="!modalForm.valid"
         >
           Save
         </button>

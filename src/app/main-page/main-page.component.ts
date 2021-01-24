@@ -10,7 +10,7 @@ import { Post } from '../models/post.model';
 })
 export class MainPageComponent implements OnInit {
   posts$: Observable<Post[]> = this.api.posts$;
-  lastId: number;
+  lastId = 0;
 
   constructor(private api: ApiService) {}
 

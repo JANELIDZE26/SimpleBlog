@@ -11,6 +11,7 @@ import { SpinnerComponent } from './shared/spinner/spinner.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ModalComponent } from './shared/modal/modal.component';
 import {FormsModule} from '@angular/forms';
+import { UserPageComponent } from './user-page/user-page.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import {FormsModule} from '@angular/forms';
     PostPageComponent,
     SpinnerComponent,
     ModalComponent,
+    UserPageComponent,
   ],
   imports: [
     BrowserModule,
