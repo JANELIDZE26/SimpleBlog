@@ -1,9 +1,9 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Post } from '../../models/post.model';
-import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
-import { map, mergeMap } from 'rxjs/operators';
-import { Comment, User } from '../../models/index.model';
+import {Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {Post} from '../../models/post.model';
+import {BehaviorSubject, combineLatest, Observable} from 'rxjs';
+import {map, mergeMap} from 'rxjs/operators';
+import {Comment, User} from '../../models/index.model';
 
 @Injectable({
   providedIn: 'root',
@@ -18,7 +18,8 @@ export class ApiService {
     map(([posts, lastId]) => posts.filter((post: Post) => post.id <= lastId))
   );
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+  }
 
   getPost(id): Observable<Post> {
     return this.http.get<Post>(`${this.url}/posts/${id}/`).pipe(
@@ -30,13 +31,13 @@ export class ApiService {
   attachComments(post: Post): Observable<Post> {
     return this.http
       .get<Comment[]>(`${this.url}/posts/${post.id}/comments`)
-      .pipe(map((comments: Comment[]) => ({ ...post, comments })));
+      .pipe(map((comments: Comment[]) => ({...post, comments})));
   }
 
   attachUser(post: Post): Observable<Post> {
     return this.http
       .get<User>(`${this.url}/users/${post.userId}`)
-      .pipe(map((user: User) => ({ ...post, user })));
+      .pipe(map((user: User) => ({...post, user})));
   }
 
   addComment(comment: Comment): Observable<any> {
@@ -46,12 +47,14 @@ export class ApiService {
   getUserProfile(userId: number, posts: Post[]): Observable<User> {
     return this.http
       .get<User>(`${this.url}/users/${userId}`)
-      .pipe(map((user: User) => ({ posts, ...user })));
+      .pipe(map((user: User) => ({posts, ...user})));
   }
 
   getUserPageData(userId: number): Observable<any> {
     return this.getPosts$.pipe(
-      map((posts: Post[]) => posts.filter((post) => post.userId === userId)),
+      map((posts) => {
+        return posts.filter((post) => post.userId === userId);
+      }),
       mergeMap((posts: Post[]) => this.getUserProfile(userId, posts))
     );
   }

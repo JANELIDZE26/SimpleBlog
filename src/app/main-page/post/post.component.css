@@ -2,6 +2,7 @@
   border-radius: 10px;
   margin: 10px auto;
   display: block;
+  min-height: 120px;
 }
 
 .post {

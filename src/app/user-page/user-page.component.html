@@ -11,30 +11,23 @@
   </div>
   <div class="user-data">
     <div class="data">
-      <p>UserName:{{ user.username }}</p>
-      <p>Name:{{ user.name }}</p>
-      <p>Email:{{ user.email }}</p>
       <p>
-        Address: <span style="font-weight: bolder">{{ user.address.city }}</span
-        >, {{ user.address.street }}
+        <span style="font-weight: bolder">UserName:</span> {{ user.username }}
+      </p>
+      <p><span style="font-weight: bolder">Name:</span> {{ user.name }}</p>
+      <p><span style="font-weight: bolder">Email:</span> {{ user.email }}</p>
+      <p>
+        <span style="font-weight: bolder">Address: </span
+        >{{ user.address.city }}, {{ user.address.street }}
       </p>
     </div>
   </div>
 </div>
-<h3 class="posts-heading" *ngIf="user">User Posts</h3>
+<h3 *ngIf="user" class="posts-heading">User Posts</h3>
 
 <div *ngIf="user">
   <div class="posts">
     <app-post *ngFor="let post of user.posts" [post]="post"></app-post>
   </div>
-  <div *ngIf="lastId < user.posts[user.posts.length - 1].id" class="button">
-    <button (click)="onLoadMore()" class="btn">Load More</button>
-  </div>
-  <div
-    class="finished-alert"
-    *ngIf="lastId >= user.posts[user.posts.length - 1].id"
-  >
-    <p>No more Posts</p>
-  </div>
 </div>
-<app-spinner class="spinner" *ngIf="!user"></app-spinner>
+<app-spinner *ngIf="!user" class="spinner"></app-spinner>
