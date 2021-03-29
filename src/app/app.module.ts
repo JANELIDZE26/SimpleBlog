@@ -7,11 +7,11 @@ import { MainPageComponent } from './main-page/main-page.component';
 import { PostComponent } from './main-page/post/post.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PostPageComponent } from './post-page/post-page.component';
-import { SpinnerComponent } from './shared/spinner/spinner.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { ModalComponent } from './shared/modal/modal.component';
-import {FormsModule} from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { UserPageComponent } from './user-page/user-page.component';
+import { SharedModule } from './shared/shared.module';
+import { ShortenTitlePipe } from './main-page/post/shortenTitle.pipe';
 
 @NgModule({
   declarations: [
@@ -19,9 +19,8 @@ import { UserPageComponent } from './user-page/user-page.component';
     MainPageComponent,
     PostComponent,
     PostPageComponent,
-    SpinnerComponent,
-    ModalComponent,
     UserPageComponent,
+    ShortenTitlePipe,
   ],
   imports: [
     BrowserModule,
@@ -29,6 +28,7 @@ import { UserPageComponent } from './user-page/user-page.component';
     HttpClientModule,
     NgbModule,
     FormsModule,
+    SharedModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
