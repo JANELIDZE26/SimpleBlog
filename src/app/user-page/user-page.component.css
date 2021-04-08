@@ -1,52 +1,13 @@
-.user {
-  background-color: white;
-  width: 50%;
-  height: 320px;
-  margin: 50px auto;
-  border-radius: 10px;
-  border: 2px solid #f1dede;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
+/*/////GENERAL-START*/
 
-.img {
-  border-radius: 10px;
-  display: block;
-  margin: 70px 10px 50px 30px;
-}
-
-.image {
-  width: 40%;
-  height: 100%;
-}
-
-.data {
-  margin: 26% auto;
-}
-
-.spinner {
-  position: absolute;
-  top: 20%;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.posts {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  margin: 0 auto;
-  width: 95%;
+.main-container {
+  width: 80%;
+  margin: 2rem auto;
 }
 
 .btn {
   background-color: #e2856e;
-  margin: 10px auto;
-  display: block;
   outline: none;
-  width: 10%;
-  height: 25px;
   border: none;
   border-radius: 300px;
   cursor: pointer;
@@ -61,34 +22,127 @@
   background-color: #a04343;
 }
 
-.finished-alert {
-  width: 10%;
-  margin: 5px auto;
-  background-color: #b23a48;
-  border-radius: 10px;
-  padding: 4px;
-}
-
-.finished-alert p {
-  text-align: center;
-  color: white;
-  margin: 5px auto;
-}
-
-.back {
-  width: 130px;
-  height: 25px;
-}
-
-.back-section {
-  height: 40px;
-  margin-bottom: 10px;
+.spinner {
   position: absolute;
-  left: 325px;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-.posts-heading{
-  margin-left: 55px;
-  color: #eceaea;
-  border-bottom: 3px solid #eceaea;
+/*/////GENERAL-END*/
+
+/*/////USER-START*/
+
+.user {
+  background-color: white;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
 }
+
+.user > div {
+  width: 80%;
+  margin-top: 1.5rem;
+}
+
+.user .image {
+  margin-top: 4rem;
+}
+.img {
+  width: 100%;
+  border-radius: 20px;
+}
+
+.user .back-section {
+  width: 55%;
+  position: absolute;
+  top: 2%;
+  left: 2%;
+  margin: 0;
+}
+
+.back-section button {
+  width: 100%;
+}
+/*/////USER-END*/
+
+/*/////USER-POSTS-START*/
+
+.user-posts {
+  margin-top: 2rem;
+}
+
+.posts-heading {
+  color: white;
+}
+/*/////USER-END-START*/
+
+
+@media (min-width: 40rem) {
+  /*/////USER-START*/
+
+  .user {
+    background-color: white;
+    border-radius: 20px;
+    flex-direction: row;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    padding: 5rem 0 2rem 0;
+  }
+
+  .user > div {
+    width: auto;
+    margin-top: 0;
+  }
+
+  .user .image {
+    margin: 0 2rem 0 0;
+  }
+
+  .img {
+    width: 100%;
+    border-radius: 20px;
+  }
+
+  .user .back-section {
+    width: 55%;
+    max-width: 10rem;
+    position: absolute;
+    top: 2%;
+    left: 2%;
+    margin: 0;
+  }
+
+  .back-section button {
+    width: 100%;
+  }
+  /*/////USER-END*/
+
+  /*/////USER-POSTS-START*/
+
+  .post {
+    width: 20%;
+    margin: 1rem;
+  }
+
+  .post .image {
+    width: 50%;
+  }
+
+  .posts {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  /*/////USER-END-START*/
+}
+
+
+
+
+

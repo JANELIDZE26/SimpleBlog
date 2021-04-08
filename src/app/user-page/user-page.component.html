@@ -1,33 +1,36 @@
-<div *ngIf="user" class="back-section">
-  <button class="back btn" routerLink=""><-- Main Page</button>
-</div>
-<div *ngIf="user" class="user">
-  <div class="image">
-    <img
-      alt="image"
-      class="img"
-      src="https://picsum.photos/id/{{ user.id }}/200/200"
-    />
-  </div>
-  <div class="user-data">
-    <div class="data">
-      <p>
-        <span style="font-weight: bolder">UserName:</span> {{ user.username }}
-      </p>
-      <p><span style="font-weight: bolder">Name:</span> {{ user.name }}</p>
-      <p><span style="font-weight: bolder">Email:</span> {{ user.email }}</p>
-      <p>
-        <span style="font-weight: bolder">Address: </span
-        >{{ user.address.city }}, {{ user.address.street }}
-      </p>
+<div class="main-container">
+  <div *ngIf="user" class="user">
+    <div *ngIf="user" class="back-section">
+      <button class="back btn" routerLink=""><-- Main Page</button>
+    </div>
+    <div class="image">
+      <img
+        alt="image"
+        class="img"
+        src="https://picsum.photos/id/{{ user.id }}/200/200"
+      />
+    </div>
+    <div class="user-data">
+      <div class="data">
+        <p>
+          <span style="font-weight: bolder">UserName:</span> {{ user.username }}
+        </p>
+        <p><span style="font-weight: bolder">Name:</span> {{ user.name }}</p>
+        <p><span style="font-weight: bolder">Email:</span> {{ user.email }}</p>
+        <p>
+          <span style="font-weight: bolder">Address: </span
+          >{{ user.address.city }}, {{ user.address.street }}
+        </p>
+      </div>
     </div>
   </div>
-</div>
-<h3 *ngIf="user" class="posts-heading">User Posts</h3>
-
-<div *ngIf="user">
-  <div class="posts">
-    <app-post *ngFor="let post of user.posts" [post]="post"></app-post>
+  <div class="user-posts">
+    <h3 *ngIf="user" class="posts-heading">User Posts</h3>
+    <div *ngIf="user">
+      <div class="posts">
+        <app-post class="post" *ngFor="let post of user.posts" [post]="post"></app-post>
+      </div>
+    </div>
   </div>
 </div>
 <app-spinner *ngIf="!user" class="spinner"></app-spinner>

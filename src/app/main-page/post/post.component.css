@@ -10,6 +10,9 @@
   background-color: white;
   text-align: center;
 }
+.post {
+  margin-bottom: 1rem;
+}
 
 .title {
   width: 80%;
@@ -54,3 +57,5 @@
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   background-color: #b53030;
 }
+
+

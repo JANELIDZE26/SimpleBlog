@@ -3,11 +3,12 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+  margin-top: 3rem;
 }
 
 .post {
   width: 20%;
-  margin: 1rem;
+  margin: 0 1rem;
 }
 
 .button {
@@ -51,7 +52,7 @@
   margin: 5px auto;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 40rem) {
   .post {
     width: 40%;
   }

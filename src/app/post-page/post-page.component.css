@@ -1,79 +1,8 @@
-.back {
-  width: 130px;
-  height: 30px;
-  padding: 5px;
-}
+/*///////GENERAL//////////////*/
 
-.back-section {
-  height: 40px;
-  margin: 5px;
-  position: absolute;
-}
-
-.post {
-  background-color: white;
+.main-container {
   width: 80%;
-  height: auto;
-  margin: 50px auto;
-  border-radius: 10px;
-  border: 2px solid #f1dede;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-
-.title {
-  margin: 50px auto 20px auto;
-  width: 80%;
-  height: 20%;
-}
-
-.title h1 {
-  color: #433a3f;
-  font-style: italic;
-  font-weight: 600;
-}
-
-.img {
-  border-radius: 10px;
-  display: block;
-  margin: 10px 100px;
-}
-
-.image {
-  width: 30%;
-  height: 50%;
-}
-
-.post-author {
-  width: 20%;
-  margin-left: 105px;
-  margin-bottom: 10px;
-}
-
-.name {
-  font-weight: 500;
-  cursor: pointer;
-  color: #2f97c1;
-  transition: color 0.2s;
-}
-
-.name:hover {
-  color: #19728f;
-}
-
-.content {
-  width: 50%;
-  margin-left: 20px;
-  margin-top: 10px;
-}
-
-.content p {
-  font-weight: 500;
-  background-color: #eceaea;
-  padding: 20px;
-  border-radius: 20px;
-  width: 650px;
+  margin: 4rem auto;
 }
 
 .spinner {
@@ -81,46 +10,6 @@
   top: 20%;
   left: 50%;
   transform: translateX(-50%);
-}
-
-/*/////////////////////////////////////////////////////////////////////////////////////////////*/
-.comments {
-  background-color: white;
-  width: 80%;
-  height: auto;
-  margin: 50px auto;
-  border-radius: 10px;
-  border: 2px solid #f1dede;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-
-.comment {
-  font-size: 16px;
-  width: 90%;
-  margin: 10px auto;
-}
-
-.comment-content p {
-  background-color: #cdcaca;
-  padding: 5px;
-  border-radius: 10px;
-}
-
-.comment-author p {
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-
-.comment-header {
-  color: white;
-  margin-left: 130px;
-}
-
-.add-comment {
-  width: 30%;
-  margin: 10px 0 10px auto;
 }
 
 .btn {
@@ -143,20 +32,219 @@
   background-color: #a04343;
 }
 
-/*/////////////////////////////////////////////////////*/
+/*///////GENERAL//////////////*/
 
-label {
-  margin-right: 5px;
+/*///////POST//////////////*/
+
+.post {
+  background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 20px;
+  position: relative;
 }
 
-input,
-textarea {
+.post > div {
+  width: 80%;
+  margin: 1rem 0;
+}
+
+.post .title {
+  margin-top: 6rem;
+}
+
+.title h1 {
+  font-size: 1.3rem;
+}
+
+.post .back-section {
+  margin: 0;
+  position: absolute;
+  top: 1%;
+  left: 2%;
+  width: 8rem;
+}
+
+.back-section button {
+  margin: 0;
+  width: 100%;
+}
+
+.image {
+  width: 25%;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+}
+
+.content {
+  background-color: #eceaea;
+  padding: 0.5rem;
+  border-radius: 20px;
+  box-shadow: 2px 2px 10px 2px rgba(0, 0, 0, 0.3);
+}
+
+.post-author {
+  margin-top: 0.5rem;
+  font-weight: 500;
+}
+
+.post-author .name {
+  font-weight: 400;
+  cursor: pointer;
+  color: #2f97c1;
+  transition: color 0.2s;
+}
+
+.name:hover {
+  color: #19728f;
+}
+
+/*///////POST//////////////*/
+
+/*///////COMMENTS//////////////*/
+.comments {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+  margin-top: 10rem;
+  border-radius: 20px;
+  padding: 2rem 0;
+  position: relative;
+}
+
+.comments > div {
+  width: 80%;
+}
+
+.comments-title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(-150%);
+  color: white;
+}
+
+.comment {
+  background-color: #eceaea;
+  padding: 1rem;
+  margin-top: 2rem;
+  border-radius: 20px;
+  box-shadow: 2px 2px 10px 2px rgba(0, 0, 0, 0.3);
+}
+
+.comment-author {
+  font-weight: 700;
+}
+
+.add-comment {
+  text-align: center;
+  margin-top: 2rem;
+  max-width: 10rem;
+}
+
+.add-comment button {
+  margin: 0;
+  width: 100%;
+}
+
+/*///////MODAL//////////////*/
+
+.modal-content {
+  border-radius: 30px !important;
+}
+
+.modal-body form {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-body form div {
+  width: 100%;
+  text-align: center;
+}
+
+#comment,
+input {
+  width: 100%;
+  margin-top: 1rem;
+  padding: 0.3rem;
+  border: 1px solid lightgray;
+  font-weight: 500;
   outline: none;
-  cursor: text;
+  transition: all 0.3s;
+  color: grey;
 }
 
-textarea {
-  width: 450px;
-  min-height: 300px;
-  max-height: 300px;
+#comment:focus,
+input:focus {
+  border-color: #2d3047;
+}
+
+#comment {
+  height: 15rem;
+  max-height: 15rem;
+  min-height: 15rem;
+}
+
+.modal-body form .modal-footer {
+  padding: 0 !important;
+  width: 60%;
+  margin-top: 2rem;
+}
+.modal-footer button {
+  margin: 0;
+  width: 100%;
+}
+/*///////MODAL//////////////*/
+
+/*///////COMMENTS//////////////*/
+
+@media (min-width: 40rem) {
+  .post {
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 3rem;
+    align-items: flex-start;
+  }
+
+  .post > div {
+    width: 50%;
+  }
+
+  .post .title {
+    width: 100%;
+  }
+
+  .post .image {
+    width: 30%;
+    max-width: 10rem;
+  }
+
+  .post .content {
+    width: 60%;
+    overflow: auto;
+    margin-left: 2rem;
+    max-height: 10rem;
+  }
+
+  .post .title {
+    margin: 1rem 0 0 0;
+  }
+  .post .post-author {
+    margin: 0;
+  }
+
+  .add-comment {
+    width: 25%;
+    max-width: 10rem;
+  }
 }
